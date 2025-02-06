@@ -3,6 +3,6 @@ public class Main {
         EmployeeDirectory employeeDirectory = new EmployeeDirectory();
         employeeDirectory.addEmployee();
         employeeDirectory.printList();
-        employeeDirectory.getNameByPhone();
+        System.out.println(employeeDirectory.getNameByEmpsNumber());
     }
 }

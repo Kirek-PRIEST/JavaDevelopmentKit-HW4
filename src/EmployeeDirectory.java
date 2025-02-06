@@ -21,34 +21,51 @@ public class EmployeeDirectory {
         employeeList.add(newEmployee);
     }
 
-    public void getByExperience() {
+    public List<Employee> getByExperience() {
+        List<Employee> result= new ArrayList<>();
         System.out.println("Введите стаж: ");
         String exp = scn.nextLine();
         for (Employee employee : employeeList) {
             if (Objects.equals(employee.getEmployee().get(4), exp)) {
-                System.out.println(employee + "\n");
+                result.add(employee);
             }
         }
+        return result;
     }
 
-    public void getNameByPhone() {
+    public Employee getNameByPhone() {
         System.out.println("Введите номер телефона: ");
         String phone = scn.nextLine();
         for (Employee employee : employeeList) {
             if (Objects.equals(employee.getEmployee().get(2), phone)) {
-                System.out.println(employee + "\n");
+                return employee;
             }
         }
+        System.out.println("Сотрудник с таким номером телефона не найден.");
+        return null;
+    }
+    public Employee getNameByEmpsNumber() {
+        System.out.println("Введите табельный номер сотрудника: ");
+        String number = scn.nextLine();
+        for (Employee employee : employeeList) {
+            if (Objects.equals(employee.getEmployee().get(1), number)) {
+                return employee;
+            }
+        }
+        System.out.println("Сотрудник с таким номером телефона не найден.");
+        return null;
     }
 
-    public void getPhoneByName() {
+    public List<Employee> getPhoneByName() {
+        List<Employee> result = new ArrayList<>();
         System.out.println("Введите имя: ");
         String phone = scn.nextLine();
         for (Employee employee : employeeList) {
             if (Objects.equals(employee.getEmployee().get(3), phone)) {
-                System.out.println(employee + "\n");
+                result.add(employee);
             }
         }
+        return result;
     }
 
     public void printList() {
